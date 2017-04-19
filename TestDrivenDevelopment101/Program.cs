@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestDrivenDevelopment101.Source;
 
 namespace TestDrivenDevelopment101
 {
@@ -11,20 +12,28 @@ namespace TestDrivenDevelopment101
         //kids additon caculator
         static void Main(string[] args)
         {
-            string greeting = "Hello this is an aditons calcualtor";
-            string question = "Please insert number and press enter";
-            Console.WriteLine(greeting);
-            Console.WriteLine(question);
-            var first = Console.ReadLine();
-            Console.WriteLine(question);
-            var second = Console.ReadLine();
-            int result = int.Parse(first) + int.Parse(second);
-            string answer = string.Format("The resulting number of the adding {0} and {1} is {2}", first, second, result);
-            Console.WriteLine(answer);
+            OutputManager outputManager = new OutputManager();
+            InputReader inputReader = new InputReader();
+            AdditonCalculator calculator = new AdditonCalculator();
+            outputManager.Greet();
+            outputManager.Ask();
+            while (!inputReader.TryReadNumber())
+            {
+                outputManager.WarnInvalidInput();
+            }
+            calculator.FirstNumber = inputReader.Number;
+            outputManager.Ask();
+            while (!inputReader.TryReadNumber())
+            {
+                outputManager.WarnInvalidInput();
+            };
+            calculator.SecondNumber = inputReader.Number;
+            outputManager.Answer(calculator);
             Console.WriteLine("Press any key to exit");
             var any = Console.Read();
 
             //try writing a word instead of a number
+            //Now it doesn't backfire
         }
     }
 }
