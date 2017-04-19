@@ -12,6 +12,7 @@ namespace TestDrivenDevelopment101
         //kids additon caculator
         static void Main(string[] args)
         {
+            //New Requierment: Only positve numbers
             OutputManager outputManager = new OutputManager();
             InputReader inputReader = new InputReader();
             AdditonCalculator calculator = new AdditonCalculator();
@@ -32,8 +33,7 @@ namespace TestDrivenDevelopment101
             Console.WriteLine("Press any key to exit");
             var any = Console.Read();
 
-            //try writing a word instead of a number
-            //Now it doesn't backfire
+            
         }
     }
 }

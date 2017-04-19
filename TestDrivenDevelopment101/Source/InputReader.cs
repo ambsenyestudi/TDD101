@@ -19,7 +19,15 @@ namespace TestDrivenDevelopment101.Source
         public bool TryReadNumber()
         {
             string input = Console.ReadLine();
-            bool success =int.TryParse(input,out _number);
+            bool success = ValidateNumber(input);
+            return success;
+        }
+        //Testable unit
+        public bool ValidateNumber(string sNumber)
+        {
+            bool success = int.TryParse(sNumber, out _number);
+            //should be possitive
+            success = success && (Number >= 0);
             return success;
         }
     }
