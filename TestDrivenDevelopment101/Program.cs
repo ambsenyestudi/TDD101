@@ -23,6 +23,8 @@ namespace TestDrivenDevelopment101
             Console.WriteLine(answer);
             Console.WriteLine("Press any key to exit");
             var any = Console.Read();
+
+            //try writing a word instead of a number
         }
     }
 }
