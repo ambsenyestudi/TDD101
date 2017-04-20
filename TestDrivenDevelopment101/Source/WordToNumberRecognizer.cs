@@ -43,11 +43,12 @@ namespace TestDrivenDevelopment101.Source
             if(wordsAreNumbers[lastIndex])
             {
                 int nextIndex = lastIndex - 1;
-                if(nextIndex >= 0)
+                while (nextIndex >= 0)
                 {
                     wordsAreNumbers[nextIndex] = 
-                        NumberRepository.Tens.Contains(words[lastIndex]) && 
-                        !(NumberRepository.TenUnits.Contains(words[lastIndex]));
+                        NumberRepository.Tens.Contains(words[nextIndex]) && 
+                        !(NumberRepository.TenUnits.Contains(words[nextIndex]));
+                    nextIndex--;
                 }    
             }
 

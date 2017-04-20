@@ -72,5 +72,41 @@ namespace TDD_TestProject
             bool isNumber = _wordToNumberRecognizer.Recognize(tensAndNumber);
             Assert.IsFalse(isNumber);
         }
+        [TestMethod]
+        public void WhenLessThanHundredShouldReconize()
+        {
+            //Ninety Nine
+            string tensAndNumber = string.Format("{0} {1}",
+
+                NumberRepository.Tens[9],
+                NumberRepository.Units[9]);
+            bool isNumber = _wordToNumberRecognizer.Recognize(tensAndNumber);
+            Assert.IsTrue(isNumber);
+        }
+        //This more than a hundred is next fase
+        [TestMethod]
+        public void WhenNotLessThanHundredShouldNotReconize()
+        {
+            //One Hundred Ninety Nine
+            string tensAndNumber = string.Format("{0} {1} {2} {3}",
+                "One",
+                "Hundred",
+                NumberRepository.Tens[9],
+                NumberRepository.Units[9]);
+            bool isNumber = _wordToNumberRecognizer.Recognize(tensAndNumber);
+            Assert.IsFalse(isNumber);
+        }
+        //TODO Fix this
+        [TestMethod]
+        public void WhenDiferentCasingNumberShouldReconize()
+        {
+            //NINETY nine
+            string tensAndNumber = string.Format("{0} {1}",
+
+                NumberRepository.Tens[9].ToUpper(),
+                NumberRepository.Units[9].ToLower());
+            bool isNumber = _wordToNumberRecognizer.Recognize(tensAndNumber);
+            Assert.IsTrue(isNumber);
+        }
     }
 }
