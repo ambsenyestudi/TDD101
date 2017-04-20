@@ -47,7 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\AdditonCalculator.cs" />
     <Compile Include="Source\InputReader.cs" />
+    <Compile Include="Source\NumberRepository.cs" />
     <Compile Include="Source\OutputManager.cs" />
+    <Compile Include="Source\WordToNumberRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -55,6 +55,7 @@
     <Compile Include="DummyUT.cs" />
     <Compile Include="InputManagerUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordToNumberRecognizerUT.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestDrivenDevelopment101\TestDrivenDevelopment101.csproj">
